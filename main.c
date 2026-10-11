@@ -36,3 +36,5 @@ int main(void)
 
     return 0;
 }
+
+//gcc -Wall -Wextra -g -pthread main.c -o main
