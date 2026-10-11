@@ -1,25 +1,26 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <unistd.h>
-#include "pthread_worker.h"
+#include "inc/pthread_worker.h"
 
 
 /* 
 Example 1 - output
 
-Hello from worker 1
-argument worker value: 0
-Hello from worker 1
-argument worker value: 1
-Hello from worker 1
-argument worker value: 2
-Hello from worker 1
-argument worker value: 3
-Hello from worker 1
-argument worker value: 4
-Hello from worker 1
-Hello from worker 1
-Hello from worker 1
+    Hello from worker 1
+    argument worker value: 0
+    Hello from worker 1
+    argument worker value: 1
+    Hello from worker 1
+    argument worker value: 2
+    Hello from worker 1
+    argument worker value: 3
+    Hello from worker 1
+    argument worker value: 4
+    Hello from worker 1
+    Hello from worker 1
+    Hello from worker 1
+
 */
 
 void pthread_example1()
@@ -39,6 +40,12 @@ void pthread_example1()
     pthread_join(thread, NULL);
 }
 
+
+/*
+Example 1 - output
+
+    the result produced by arg worker: 5
+*/
 void pthread_example2()
 {
     pthread_t thread;
@@ -61,4 +68,4 @@ int main()
     return 0;
 }
 
-// compilation : gcc -Wall -Wextra -g -pthread pthread_basics.c pthread_worker.c -o pthread_basics
+// compilation : gcc -Wall -Wextra -g -pthread -Iinc *.c -o exe/pthread_basics
