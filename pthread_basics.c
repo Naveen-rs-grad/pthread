@@ -4,6 +4,7 @@
 #include "inc/pthread_worker.h"
 #include "inc/pthread_mutex.h"
 #include "inc/pthread_cv.h"
+#include "inc/pthread_semaphore.h"
 
 /* 
 Example 1 - output
@@ -68,7 +69,9 @@ int main()
 
     // pthreads_mutex_example();
 
-    pthread_producer_consumer();
+    // pthread_producer_consumer();
+
+    semaphore_example();
 
     return 0;
 }
