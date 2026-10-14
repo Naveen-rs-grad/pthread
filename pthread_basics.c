@@ -2,6 +2,7 @@
 #include <pthread.h>
 #include <unistd.h>
 #include "inc/pthread_worker.h"
+#include "inc/pthread_mutex.h"
 
 
 /* 
@@ -63,7 +64,9 @@ int main()
 {
     // pthread_example1();
 
-    pthread_example2();
+    // pthread_example2();
+
+    pthreads_mutex_example();
 
     return 0;
 }
