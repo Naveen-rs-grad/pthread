@@ -8,7 +8,7 @@
 #define NUM_SAMPLES 5
 
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-pthread_cond_t condition = PTHREAD_COND_INITIALIZER;
+pthread_cond_t condition = PTHREAD_COND_INITIALIZER; 
 
 /* Variables shared*/
 int finished = 0;
@@ -27,7 +27,7 @@ void* producer_task(void *arg)
         // Wait until previous sample is consumed.
         while (data_ready)
         {
-            pthread_cond_wait(&condition, &mutex);
+            pthread_cond_wait(&condition, &mutex); //with conditional waits threads are put in sleep instead of polling to reduce CPU cycles
         }
 
         sensor_value = i + 0.5;
