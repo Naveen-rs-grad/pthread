@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "inc/pthread_worker.h"
 #include "inc/pthread_mutex.h"
-
+#include "inc/pthread_cv.h"
 
 /* 
 Example 1 - output
@@ -66,7 +66,9 @@ int main()
 
     // pthread_example2();
 
-    pthreads_mutex_example();
+    // pthreads_mutex_example();
+
+    pthread_producer_consumer();
 
     return 0;
 }
